@@ -11,6 +11,8 @@
 
 @interface LocalLoadingViewController ()
 
+@property (nonatomic, strong) JXBAdPageView *pageView;
+
 @end
 
 @implementation LocalLoadingViewController
@@ -28,14 +30,13 @@
     // 对象方法调用
     JXBAdPageView *pageView = [[JXBAdPageView alloc] initWithAdsImages:dataArray timerInterval:0 urlLoadingBlock:nil];
     
-    [pageView setFrame:self.view.bounds];
-    
     /*
-    pageView.currentPageIndicatorTintColor = [UIColor redColor];
-    pageView.pageIndicatorTintColor = [UIColor blackColor];
-    */
+     pageView.currentPageIndicatorTintColor = [UIColor redColor];
+     pageView.pageIndicatorTintColor = [UIColor blackColor];
+     */
     
     [pageView setPageControlCurrentPageIndicatorTintColor:[UIColor redColor] pageIndicatorTintColor:[UIColor blackColor]];
+    self.pageView = pageView;
     
     [self.view addSubview:pageView];
     
@@ -46,5 +47,9 @@
     };
 }
 
+- (void)viewWillLayoutSubviews
+{
+    [self.pageView setFrame:self.view.bounds];
+}
 
 @end

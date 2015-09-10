@@ -15,6 +15,8 @@
 
 @interface URLLoadingViewController ()
 
+@property (nonatomic, strong) JXBAdPageView *pageView;
+
 @end
 
 @implementation URLLoadingViewController
@@ -31,18 +33,18 @@
                            @"https://ss0.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1262102604,326317574&fm=21&gp=0.jpg",
                            @"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3992155232,292560584&fm=21&gp=0.jpg"
                            ];
-
+    
     // 对象方法调用
     /*
-    JXBAdPageView *pageView = [[JXBAdPageView alloc] initWithAdsImages:dataArray timerInterval:2.0 urlLoadingBlock:^(NSArray *imageViews, NSArray *imageUrlStrings) {
-        for (int i = 0; i < 3; i++) {
-            UIImageView *imageView = (UIImageView *)imageViews[i];
-            NSURL *imageUrl = [NSURL URLWithString:imageUrlStrings[i]];
-            [imageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"img_01"]];
-        }
-    }];
+     JXBAdPageView *pageView = [[JXBAdPageView alloc] initWithAdsImages:dataArray timerInterval:2.0 urlLoadingBlock:^(NSArray *imageViews, NSArray *imageUrlStrings) {
+     for (int i = 0; i < 3; i++) {
+     UIImageView *imageView = (UIImageView *)imageViews[i];
+     NSURL *imageUrl = [NSURL URLWithString:imageUrlStrings[i]];
+     [imageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"img_01"]];
+     }
+     }];
      */
-
+    
     // 类方法调用
     JXBAdPageView *pageView = [JXBAdPageView pageViewWithAdsImages:dataArray timerInterval:2.0 urlLoadingBlock:^(NSArray *imageViews, NSArray *imageUrlStrings) {
         for (int i = 0; i < 3; i++) {
@@ -52,7 +54,7 @@
         }
     }];
     
-    [pageView setFrame:self.view.bounds];
+    self.pageView = pageView;
     
     [self.view addSubview:pageView];
     
@@ -61,6 +63,11 @@
         NSLog(@"当前点击的广告页Index = %ld", index);
         
     };
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [self.pageView setFrame:self.view.bounds];
 }
 
 @end
