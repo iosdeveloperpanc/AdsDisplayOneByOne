@@ -1,25 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5z0-eN-XXM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--循环轮播示例-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU2-c7-Hqz">
+                                <rect key="frame" x="130" y="225" width="60" height="30"/>
+                                <state key="normal" title="网络加载">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Fxu-gs-6Ri" kind="show" id="zEd-lJ-dt4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nq4-Mx-rQr">
+                                <rect key="frame" x="130" y="163" width="60" height="30"/>
+                                <state key="normal" title="本地加载">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="R5I-v1-tXv" kind="show" id="DQo-NH-hSq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nq4-Mx-rQr" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Qws-wx-ZHG"/>
+                            <constraint firstItem="Nq4-Mx-rQr" firstAttribute="leading" secondItem="QU2-c7-Hqz" secondAttribute="leading" id="SHP-wn-B9N"/>
+                            <constraint firstItem="QU2-c7-Hqz" firstAttribute="top" secondItem="Nq4-Mx-rQr" secondAttribute="bottom" constant="32" id="ZIy-5P-QqB"/>
+                            <constraint firstItem="QU2-c7-Hqz" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="oln-pb-JXS"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="循环轮播示例" id="C7M-fB-WFD"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-188" y="407"/>
+        </scene>
+        <!--本地加载-->
+        <scene sceneID="gmp-sf-wcN">
+            <objects>
+                <viewController id="R5I-v1-tXv" customClass="LocalLoadingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hzV-NY-ye6"/>
+                        <viewControllerLayoutGuide type="bottom" id="A0j-HU-rj9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DyF-10-FEq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="本地加载" id="xek-hH-wNr"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P57-Yf-lMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="305"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rf4-Fc-zQQ">
+            <objects>
+                <navigationController id="5z0-eN-XXM" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="brt-Ir-y62">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="1gS-9G-vVw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vgl-mY-Ecg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-588" y="407"/>
+        </scene>
+        <!--网络加载-->
+        <scene sceneID="ofv-vN-jC9">
+            <objects>
+                <viewController id="Fxu-gs-6Ri" customClass="URLLoadingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lnL-we-qbQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ar5-Xd-kEh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rlM-Um-Oz6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="网络加载" id="DxE-Ag-QDL"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0S-gn-ies" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="845"/>
         </scene>
     </scenes>
 </document>
