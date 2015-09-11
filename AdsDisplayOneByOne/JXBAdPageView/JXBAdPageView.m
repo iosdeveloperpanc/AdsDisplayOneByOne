@@ -134,6 +134,8 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     self.scrollView.frame = self.bounds;
     
     CGFloat width = self.scrollView.frame.size.width;
@@ -153,6 +155,8 @@
 #pragma mark - 点击广告
 - (void)tapAds
 {
+    [self stopTimer];
+    
     if (self.blockTapAds) {
         self.blockTapAds(self, self.currentIndex);
     }

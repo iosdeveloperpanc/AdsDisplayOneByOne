@@ -1,13 +1,15 @@
 //
-//  LocalLoadingViewController.m
-//  循环滚动改进版
+//  TapResultViewController.h
+//  AdsDisplayOneByOne
 //
-//  Created by Pan on 15/9/10.
+//  Created by Pan on 15/9/11.
 //  Copyright (c) 2015年 lanyao. All rights reserved.
 //
 
 #import "LocalLoadingViewController.h"
 #import "JXBAdPageView.h"
+
+#import "TapResultViewController.h"
 
 @interface LocalLoadingViewController ()
 
@@ -16,6 +18,20 @@
 @end
 
 @implementation LocalLoadingViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.pageView startTimer];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.pageView stopTimer];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,13 +59,24 @@
     pageView.blockTapAds = ^(JXBAdPageView *pageView, NSInteger index){
         
         NSLog(@"当前点击的广告页Index = %ld", index);
-        
+        NSString *result = [NSString stringWithFormat:@"当前点击的广告页Index = %ld", index];
+        [self performSegueWithIdentifier:@"localPush" sender:result];
     };
 }
 
 - (void)viewWillLayoutSubviews
 {
+    [super viewWillLayoutSubviews];
+    
     [self.pageView setFrame:self.view.bounds];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSString *)sender
+{
+    if ([segue.identifier isEqualToString:@"localPush"]) {
+        TapResultViewController *resultVc = (TapResultViewController *)segue.destinationViewController;
+        resultVc.result = sender;
+    }
 }
 
 @end

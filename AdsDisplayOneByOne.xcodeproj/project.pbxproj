@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6576D9611BA2978A005C2B65 /* TapResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6576D9601BA2978A005C2B65 /* TapResultViewController.m */; };
 		65ABF07E1BA14C82008FCF2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABF07D1BA14C82008FCF2E /* main.m */; };
 		65ABF0811BA14C82008FCF2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABF0801BA14C82008FCF2E /* AppDelegate.m */; };
 		65ABF0841BA14C82008FCF2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABF0831BA14C82008FCF2E /* ViewController.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6576D95F1BA2978A005C2B65 /* TapResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapResultViewController.h; sourceTree = "<group>"; };
+		6576D9601BA2978A005C2B65 /* TapResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapResultViewController.m; sourceTree = "<group>"; };
 		65ABF0781BA14C82008FCF2E /* AdsDisplayOneByOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdsDisplayOneByOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ABF07C1BA14C82008FCF2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65ABF07D1BA14C82008FCF2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				65ABF0A51BA14C9E008FCF2E /* LocalLoadingViewController.m */,
 				65ABF0CB1BA14C9E008FCF2E /* URLLoadingViewController.h */,
 				65ABF0CC1BA14C9E008FCF2E /* URLLoadingViewController.m */,
+				6576D95F1BA2978A005C2B65 /* TapResultViewController.h */,
+				6576D9601BA2978A005C2B65 /* TapResultViewController.m */,
 				65ABF07F1BA14C82008FCF2E /* AppDelegate.h */,
 				65ABF0801BA14C82008FCF2E /* AppDelegate.m */,
 				65ABF0821BA14C82008FCF2E /* ViewController.h */,
@@ -341,6 +346,7 @@
 				65ABF0811BA14C82008FCF2E /* AppDelegate.m in Sources */,
 				65ABF0D91BA14C9E008FCF2E /* UIButton+WebCache.m in Sources */,
 				65ABF0D11BA14C9E008FCF2E /* NSData+ImageContentType.m in Sources */,
+				6576D9611BA2978A005C2B65 /* TapResultViewController.m in Sources */,
 				65ABF0D81BA14C9E008FCF2E /* SDWebImagePrefetcher.m in Sources */,
 				65ABF0D51BA14C9E008FCF2E /* SDWebImageDownloader.m in Sources */,
 				65ABF07E1BA14C82008FCF2E /* main.m in Sources */,
@@ -548,6 +554,7 @@
 				65ABF09D1BA14C82008FCF2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65ABF09E1BA14C82008FCF2E /* Build configuration list for PBXNativeTarget "AdsDisplayOneByOneTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +563,7 @@
 				65ABF0A01BA14C82008FCF2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface URLLoadingViewController : UIViewController
+@interface TapResultViewController : UIViewController
+
+@property (nonatomic, copy) NSString *result;
 
 @end

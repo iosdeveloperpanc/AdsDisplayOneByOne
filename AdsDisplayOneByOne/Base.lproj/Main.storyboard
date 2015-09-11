@@ -65,10 +65,47 @@
                     </view>
                     <navigationItem key="navigationItem" title="本地加载" id="xek-hH-wNr"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="X5w-N4-QPd" kind="show" identifier="localPush" id="YbX-RW-1cc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P57-Yf-lMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="305"/>
+            <point key="canvasLocation" x="315" y="307"/>
+        </scene>
+        <!--Tap Result View Controller-->
+        <scene sceneID="Ufe-KK-Eou">
+            <objects>
+                <viewController id="X5w-N4-QPd" customClass="TapResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JbK-6e-21o"/>
+                        <viewControllerLayoutGuide type="bottom" id="MJv-cD-Fdk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m4l-Cb-jpA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-Hq-J9m">
+                                <rect key="frame" x="139" y="229" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="EN3-Hq-J9m" secondAttribute="centerY" id="5Ns-rt-EY5"/>
+                            <constraint firstAttribute="centerX" secondItem="EN3-Hq-J9m" secondAttribute="centerX" id="sLa-mB-SsC"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="EN3-Hq-J9m" id="Bn7-hl-RJQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b29-Bd-v0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="449"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rf4-Fc-zQQ">
@@ -102,10 +139,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="网络加载" id="DxE-Ag-QDL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="X5w-N4-QPd" kind="show" identifier="urlPush" id="fHG-f0-ST2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0S-gn-ies" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="845"/>
+            <point key="canvasLocation" x="315" y="848"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YbX-RW-1cc"/>
+    </inferredMetricsTieBreakers>
 </document>

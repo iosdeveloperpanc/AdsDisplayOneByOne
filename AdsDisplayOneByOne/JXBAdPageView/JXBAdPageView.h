@@ -59,4 +59,9 @@ typedef void (^blockImageUrlLoading)(NSArray *imageViews, NSArray *imageUrlStrin
 // set pageControl colors
 - (void)setPageControlCurrentPageIndicatorTintColor:(UIColor *)currentPageIndicatorTintColor pageIndicatorTintColor:(UIColor *)pageIndicatorTintColor;
 
+// 开启计时器
+- (void)startTimer;
+// 关闭计时器
+- (void)stopTimer;
+
 @end
